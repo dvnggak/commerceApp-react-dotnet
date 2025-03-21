@@ -14,25 +14,31 @@ export default function BasicCard(product: IProduct) {
   };
   
   return (
-    <Card sx={{ minWidth: 275 }} className="grid grid-cols-1 gap-4">
+    <Card sx={{ minWidth: 275, color:"primary" }} className="grid grid-cols-1">
+      <img src="https://picsum.photos/1000/500" alt={product.name} width="full" height="full" />
       <CardContent>
         <Typography gutterBottom sx={{ color: "text.secondary", fontSize: 14 }}>
           {product.category}
         </Typography>
-        <Typography variant="h5" component="div">
+        <Typography variant="h5" component="div" sx={({ fontWeight: "bold"})}>
           {product.name}
         </Typography>
-        <div className="flex gap-24">
-          <Typography sx={{ color: "text.secondary", mb: 1.5 }}>
+        <div className="flex my-1 mb-2 justify-between">
+          <Typography sx={{ mb: 1, color: "green" }}>
             $ {product.price}
           </Typography>
-          <Typography sx={{ color: "text.secondary", mb: 1.5 }}>
+          {product.stock > 0 ? 
+          <Typography sx={{ mb: 1 }}>
             Stock : {product.stock}
-          </Typography>
+          </Typography> :
+          
+          <Typography sx={{ mb: 1, color: "red" }}>
+            Stock : {product.stock}
+          </Typography>}
         </div>
         <Typography variant="body2">{product.description}</Typography>
       </CardContent>
-      <CardActions className="flex justify-end place-items-end">
+      <CardActions className="flex justify-center place-items-center">
         <Button size="small" onClick={handleCheckout}>
           Checkout now!
         </Button>

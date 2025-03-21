@@ -8,7 +8,7 @@ export const DefaultLayout: React.FC<IChildren> = ({ children }) => {
   return (
     <div className="w-screen min-h-screen bg-gray-100">
       <Navbar />
-      <div className="p-4 gap-2">{children}</div>
+      <div className="p-8">{children}</div>
     </div>
   );
 };

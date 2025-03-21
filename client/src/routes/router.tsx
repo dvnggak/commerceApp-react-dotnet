@@ -9,7 +9,7 @@ export const router = createBrowserRouter([
   {
     path: "*",
     element: (
-      <h1 className="text-3xl font-bold underline">Males kerjain ini dev!</h1>
+      <h1 className="text-3xl font-bold underline">Jangan pencet-pencet, males ngerjainnya</h1>
     ),
   },
 ]);
